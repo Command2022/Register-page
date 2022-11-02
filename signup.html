@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %} 
+{% csrf_token %}
+       
+<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main">  	
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+      <div class="signup">
+        <form method="post">
+          <table>
+            <tr>
+              <td>
+                <label for="">{{ form.username.label }}</label>
+              </td>
+              <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+              <tr>
+                <td>
+                  <label for="">{{ form.email.label }}</label>
+                </td>
+                <td>{{ form.email }}</td>
+              </tr>
+              <td>
+                <label for="">{{ form.password.label }}</label>
+              </td>
+              <td>{{ form.password }}</td>
+            </tr>
+          </table>
+          <button>Sign up</button>
+        </form>
+      </div>
+
+      <div class="login">
+        <form method="post">
+          <table>
+            <tr>
+              <td>
+                <label for="">{{ form.username.label }}</label>
+              </td>
+              <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">{{ form.password.label }}</label>
+              </td>
+              <td>{{ form.password }}</td>
+            </tr>
+          </table>
+          <button>Login</button>
+        </form>
+      </div>
+  </div>
+{% endblock content %}
